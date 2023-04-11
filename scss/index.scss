@@ -2,6 +2,7 @@ main#home {
     display: flex;
     flex-direction: column;
     height: 100vh;
+
     div {
         &.top {
             width: 100%;
@@ -9,12 +10,14 @@ main#home {
             background-color: #393939;
             display: flex;
             justify-content: center;
+
             img {
                 width: 70%;
                 height: 100%;
                 object-fit: cover;
             }
         }
+
         &.bottom {
             height: 50%;
             width: 100%;
@@ -25,14 +28,17 @@ main#home {
             color: #ffffff;
             justify-content: space-evenly;
             font-family: 'Inter', sans-serif;
+
             h1 {
                 font-size: 2rem;
                 font-weight: bold;
             }
+
             span {
                 font-size: 1rem;
                 text-align: center;
             }
+
             div#buttons {
                 display: flex;
                 width: 100%;
