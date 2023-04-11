@@ -1,0 +1,12 @@
+main#home {
+    div.top {
+        width: 100%;
+        height: 50%;
+        background-color: red;
+        img {
+            width: 80%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
