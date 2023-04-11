@@ -14,10 +14,10 @@
 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tincidunt scelerisque diam, sed bibendum magna consectetur vel. Sed nec vestibulum dolor, non malesuada velit. Mauris rutrum accumsan quam, vitae elementum mauris </span>
             <div id="buttons">
                 <button class="default">
-                    Meer info
+                    <a href="info.php">Meer info</a>
                 </button>
                 <button class="default">
-                    Contact
+                    <a href="contact.php">Contact</a>
                 </button>
             </div>
         </div>

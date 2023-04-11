@@ -25,13 +25,20 @@ main#home {
             color: #ffffff;
             justify-content: space-evenly;
             font-family: 'Inter', sans-serif;
+           
             h1 {
                 font-size: 2rem;
                 font-weight: bold;
+                @media (max-width: 650px) {
+                    font-size: 1.5rem;
+                }
             }
             span {
                 font-size: 1rem;
                 text-align: center;
+                @media (max-width: 650px) {
+                    font-size: .8rem;
+                }
             }
             div#buttons {
                 display: flex;
