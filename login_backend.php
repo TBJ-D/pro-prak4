@@ -2,7 +2,7 @@
 
 $email =  htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST["password"]);
-
+require ('./util/encryption.php');
 require('./config.php');
 
 $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
@@ -18,7 +18,7 @@ $row = $stmt->fetch();
 if ($row == false) {
     echo "no user";
 }else {
-    setcookie('user', $row['userId']);
+    setcookie('user',Decrypt($row['userId']));
 }
 
 
