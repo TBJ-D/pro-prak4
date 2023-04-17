@@ -1,0 +1,30 @@
+main#register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-background {
+        background-color: #3E3E3E;
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+        padding: 2rem;
+        width: 40rem;
+        height: 25rem;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        div#buttons {
+            display: flex;
+            gap: 2rem;
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+}
