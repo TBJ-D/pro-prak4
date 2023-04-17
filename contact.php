@@ -22,7 +22,6 @@
                 <label for="inhoud">Inhoud</label><br>
                 <textarea type="text" id="inhoud"></textarea><br>
 
-
                 <input type="radio" id="radio">
                 <label for="radio">Inschrijven voor nieuwsbrief</label>
 
