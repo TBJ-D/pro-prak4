@@ -1,6 +1,6 @@
-<head>
+<!-- <head>
     <link rel="stylesheet" href="/scss/contact.scss">
-</head>
+</head> -->
 
 
 <body>
