@@ -1,0 +1,72 @@
+body {
+    background-color: #252525;
+}
+
+.flex {
+    display: flex;
+}
+
+.form-content {
+
+    font-family: 'Inter';
+
+    background-color: #3E3E3E;
+    margin: 2rem;
+    color: white;
+
+
+
+    padding: 2rem;
+    width: 30rem;
+    height: fit-content;
+
+
+}
+
+form {
+
+    >h1 {
+
+        font-style: normal;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    >label {
+        // margin-top: 3rem;
+        // background-color: red;
+    }
+
+    >input {
+        background-color: #2E2E2E;
+        border-style: none;
+        margin-bottom: 2rem;
+        color: white;
+    }
+
+    #email,
+    #onderwerp {
+        width: 20rem;
+        height: 2rem;
+    }
+
+    #submit {
+        background-color: red;
+        padding: 2rem;
+        background-color: #444444;
+        color: white;
+        font-family: 'Inter';
+    }
+
+   #inhoud {
+    height: 20rem;
+    width: 20rem;
+    text-align: left;
+    vertical-align: top;
+   }
+
+
+
+
+    align-items: center;
+}
