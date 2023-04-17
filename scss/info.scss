@@ -1,8 +1,8 @@
 main#info {
     div.top {
-        // width: 100%;
-        // height: 50%;
-        background-color: black;
+        width: 100%;
+        height: 50%;
+        // background-color: black;
 
         // img {
         //     width: 80%;
@@ -11,8 +11,14 @@ main#info {
         // }
     }
 
-    img {
-        height: 2rem;
-        width: 2rem;
+    .banner {
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner img {
+        height: fit-content;
+        width: 40rem;
+
     }
 }
