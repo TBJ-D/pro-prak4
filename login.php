@@ -21,7 +21,10 @@
                         </div>
                         END;
                     }else {
-                        echo "logged in!";
+                        echo <<<END
+                        <a href="logout.php"><button type="button">Logout</button></a>
+
+                        END;
                     }
                 ?>
                         
