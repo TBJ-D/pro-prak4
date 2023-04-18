@@ -12,17 +12,17 @@
         <div class="form-background">
 
 
-            <form action="">
+            <form method="post" action="contact_backend.php">
 
                 <h1>Contact</h1>
                 <label for="email">Email</label><br>
-                <input type="text" id=email placeholder="example@gmail.com"><br>
+                <input name="email" type="text" id=email placeholder="example@gmail.com" required><br>
                 <label for="onderwerp">Onderwerp</label><br>
-                <input type="text" id="onderwerp"><br>
+                <input name="onderwerp" type="text" id="onderwerp" required><br>
                 <label for="inhoud">Inhoud</label><br>
-                <textarea type="text" id="inhoud"></textarea><br>
+                <textarea name="inhoud" type="text" id="inhoud"></textarea><br>
 
-                <input type="radio" id="radio">
+                <input name="inschrijven" type="radio" id="radio">
                 <label for="radio">Inschrijven voor nieuwsbrief</label>
 
                 <br><br>

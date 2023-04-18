@@ -19,6 +19,7 @@ if ($row == false) {
     echo "no user";
 }else {
     setcookie('user',Decrypt($row['userId']));
+    setcookie('email', $email);
 }
 
 

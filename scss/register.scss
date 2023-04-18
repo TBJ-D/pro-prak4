@@ -19,6 +19,11 @@ main#register {
     form {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        input {
+            width: 25rem;
+            height: 2rem;
+        }
         div#buttons {
             display: flex;
             gap: 2rem;
@@ -26,5 +31,22 @@ main#register {
                 font-size: 1rem;
             }
         }
+        div.berichten {
+            background-color: #4E4E4E;
+            width: 35rem;
+            height: 10rem;
+            overflow-y: scroll;
+            gap: .1rem;
+            display: flex;
+            flex-direction: column;
+            div.bericht {
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(0,0,0,.5);
+                width: 100%;
+                height: 5rem;
+            }
+        }
+
     }
 }
