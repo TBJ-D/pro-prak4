@@ -25,6 +25,10 @@ function voegAbonnee($email, $pdo){
     if (alreadySubscribed($email,$pdo)) return; 
     $stmt = $pdo->prepare("INSERT INTO abonnees VALUES (?)");
     $stmt->execute([$email]);
+    $msg = "Dankuwel voor het inschrijven voor onze nieuwsbrief!";
+
+    echo "Mailing to ". $email;
+    mail($email,"Dankuwel voor het inschrijven.",$msg);
 }
 
 // Functie om het bericht van de gebruiker op te slaan

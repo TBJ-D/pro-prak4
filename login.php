@@ -74,6 +74,7 @@
                         <div class="berichten">
                             $str
                         </div>
+                        <a href="paginaoverzicht.php"><button type="button">Pagina Overzicht</button></a>
                         <a href="logout.php"><button type="button">Logout</button></a>
 
                         END;

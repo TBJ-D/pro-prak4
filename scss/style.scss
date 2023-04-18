@@ -11,6 +11,7 @@
 @import './contact.scss';
 @import './register.scss';
 
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 p,
@@ -92,7 +93,39 @@ header {
 
             @media (max-width: 650px) {
                 gap: 1rem;
+
             }
         }
     }
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+}
+
+.nav__links li {
+    padding: 0px 20px;
+    position: relative;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav__links li>ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #395B64;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

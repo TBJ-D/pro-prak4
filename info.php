@@ -4,11 +4,10 @@
         include_once("header.php");
     ?> 
     <main id="info">
-    <div class="banner">
-    <img src="media\info_banner.png" alt="">
-    <div class="glaasje"></div>
-  <h1>iPhone 14 Pro</h1>
-</div>
+        <div class="top">
+            <img src="media/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-Dynamic-Island-demo-3up.jpg.large_2x" alt="iphone14">
+        </div>
+    </main>
 
   <div class="bottom">
     <img src="media/iPhone-14-Mock.png" alt="first">
