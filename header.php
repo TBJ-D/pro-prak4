@@ -16,4 +16,5 @@
 
         </ul>
     </nav>
+    <a href="./login.php"><img src="media/user-solid.svg" id="login" alt=""></a>
 </header>
