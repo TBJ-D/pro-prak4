@@ -19,33 +19,37 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 p,
 a,
 span,
 h1 {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  font-size: 20px;
-}
-img {
-  -webkit-user-drag: none;
-  user-select: none;
-}
-ul,li {
-    list-style-type: none;  
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
 }
 
-button{
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+button {
     all: unset;
-    
+
     color: white;
     width: 9rem;
     height: 2.5rem;
     text-align: center;
 
-    &.default{
+    &.default {
         background-color: #444444;
     }
 }
@@ -59,43 +63,48 @@ header {
     top: 0;
     display: flex;
     justify-content: center;
+    z-index: 1;
 
     img {
         height: 2.5rem;
         height: 2.5rem;
         position: absolute;
+
         &#logo {
-            
+
             left: 1rem;
             top: 1rem;
         }
+
         &#login {
-            
+
             right: 1rem;
             top: 1rem;
             fill: #ffffff;
             color: #ffffff;
         }
     }
+
     nav {
         width: 30%;
         height: 100%;
         display: flex;
         justify-content: center;
-        
-        
-        ul{
+
+        ul {
             display: flex;
             width: 100%;
             justify-content: space-evenly;
             align-items: center;
+
             @media (max-width: 650px) {
                 gap: 1rem;
-                
+
             }
         }
     }
 }
+
 .nav__links {
     list-style: none;
     display: flex;
