@@ -12,7 +12,7 @@
             <li><a href="./index.php">Home</a></li>
             <li><a href="./info.php">Informatie</a></li>
             <li><a href="./contact.php">Contact</a></li>
-
         </ul>
     </nav>
+    <a href="./login.php"><img src="media/user-solid.svg" id="login" alt=""></a>
 </header>

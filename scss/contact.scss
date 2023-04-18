@@ -2,71 +2,76 @@ body {
     background-color: #252525;
 }
 
-.flex {
+.form-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.form-content {
-
-    font-family: 'Inter';
-
+.form-background {
     background-color: #3E3E3E;
-    margin: 2rem;
-    color: white;
+    display: flex;
+    justify-content: center;
 
-
-
+    margin-top: 6rem;
     padding: 2rem;
-    width: 30rem;
-    height: fit-content;
-
-
+    width: 40rem;
+    height: 47rem;
 }
 
 form {
+    font-family: 'Inter';
+    color: white;
 
     >h1 {
-
-        font-style: normal;
         font-weight: 600;
         text-align: center;
+        font-size: 50;
+        margin-bottom: 2rem;
+
     }
 
-    >label {
-        // margin-top: 3rem;
-        // background-color: red;
-    }
-
-    >input {
+    >input,
+    textarea {
         background-color: #2E2E2E;
         border-style: none;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         color: white;
+        font-size: 14px;
+        font-family: 'Inter';
+
+        border-radius: .3rem;
+        padding: .3rem;
     }
 
     #email,
-    #onderwerp {
-        width: 20rem;
+    #onderwerp,
+    #inhoud {
+        width: 30rem;
         height: 2rem;
+
+    }
+
+    #radio {
+        margin-bottom: 0;
+        background-color: red;
+    }
+
+    #inhoud {
+        height: 20rem;
     }
 
     #submit {
-        background-color: red;
-        padding: 2rem;
+        padding: 1em 4rem 1rem 4rem;
         background-color: #444444;
         color: white;
-        font-family: 'Inter';
+        font-weight: bold;
+        font-size: 15;
+        border-style: none;
     }
 
-   #inhoud {
-    height: 20rem;
-    width: 20rem;
-    text-align: left;
-    vertical-align: top;
-   }
-
-
-
-
-    align-items: center;
+    .submit-container {
+        display: flex;
+        justify-content: center;
+    }
 }
