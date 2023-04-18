@@ -4,8 +4,8 @@
     <?php 
         include_once("header.php");
     ?> 
-    <main id="register">
-        <div class="form-container form-background">
+    <main id="paginaoverzicht">
+        <div class="">
             
         </div>
     </main>
