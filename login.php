@@ -27,7 +27,7 @@
                         $res = $stmt->fetchAll();
                         return $res;
                     }
-
+                    // Als gebruiker niet is ingelogd, dus !isset($_COOKIE["user"]); Display login pagina. Anders display berichten dashboard.
                     if(!isset($_COOKIE["user"])) {
                         echo <<<END
                         <h1>Login</h1>
@@ -43,7 +43,7 @@
                     }else {
 
 
-
+                        // Bericht template
                         $bericht = `
                         <div class="bericht">
                             <span>Time sent:</span>
@@ -51,8 +51,10 @@
                             <span>Content:</span>
                         </div>
                         `;
+                        // Haal de gebruikers berichten op.
                         $berichten = getBerichten();
                         $str = "";
+                        // Voeg aan de lege string alle berichten toe.
                         foreach ($berichten as $bericht) {
                             
                             $subject = $bericht['subject'];
@@ -64,6 +66,7 @@
                             </div>
                             END;
                         }
+                        // Display alle berichten gestuurd door de gebruiker.
                         echo <<<END
 
                         <h2>Ingelogd.</h2>
