@@ -46,7 +46,7 @@ if ($nieuwsbrief) {
 saveBericht($email, $onderwerp, $inhoud, $pdo);
 
 // Stuur gebruiker terug naar oorspronkelijke pagina
-// echo "<script> location.href='contact.php'; </script>";
+echo "<script> location.href='contact.php'; </script>";
 exit;
 
 

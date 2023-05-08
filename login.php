@@ -70,12 +70,11 @@
                         echo <<<END
 
                         <h2>Ingelogd.</h2>
-                        <a href="#">Paginaoverzicht</a>
+                        <a href="paginaoverzicht.php?page=index.php"><button type="button" class="default">Paginaoverzicht</button></a>
                         <div class="berichten">
                             $str
                         </div>
-                        <a href="paginaoverzicht.php"><button type="button">Pagina Overzicht</button></a>
-                        <a href="logout.php"><button type="button">Logout</button></a>
+                        <a href="logout.php"><button type="button" class="default">Logout</button></a>
 
                         END;
                     }
