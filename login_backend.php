@@ -1,5 +1,5 @@
 <?php 
-
+// Haal form inputs op
 $email =  htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST["password"]);
 require ('./util/encryption.php');
@@ -19,14 +19,10 @@ if ($row == false) {
     echo "no user";
 }else {
     setcookie('user',Decrypt($row['userId']));
+    setcookie('email', $email);
 }
 
-
+// Stuur gebruiker terug naar oorspronkelijke pagina
 echo "<script> location.href='login.php'; </script>";
 exit;
-
-
-
-
-
 ?>
