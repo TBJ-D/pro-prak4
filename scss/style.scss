@@ -1,14 +1,15 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    gap: 1rem;
 }
 
 @import './index.scss';
@@ -97,10 +98,6 @@ header {
             justify-content: space-evenly;
             align-items: center;
 
-            @media (max-width: 650px) {
-                gap: 1rem;
-
-            }
         }
     }
 }
