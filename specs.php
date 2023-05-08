@@ -3,7 +3,7 @@ include_once("header.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="./css/specs.php">
+    <link rel="stylesheet" href="./css/specs.css">
 </head>
 
 <body>
