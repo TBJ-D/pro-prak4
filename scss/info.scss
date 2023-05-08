@@ -2,7 +2,7 @@ main#info {
     div.top {
         width: 100%;
         height: 50%;
-        background-color: black;
+        background-color: #222222;
         color: white;
 
         // img {
@@ -12,45 +12,34 @@ main#info {
         // }
     }
 
-    h1 {
-        position: relative;
-    }
-
     .banner {
         display: flex;
         justify-content: center;
+        align-items: center;
         background-color: #393939;
+        position: relative;
+        width: 100%;
 
-    }
-
-    .banner img {
-        height: fit-content;
-        width: 40rem;
-        opacity: 100%;
-
-        /* Toegevoegd */
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.6;
-            /* Toegevoegd */
+        img {
+            height: fit-content;
+            width: 40rem;
+            opacity: 100%;
         }
 
-    }
+        h1 {
+            position: absolute;
+            top: 50%;
+            font-size: 3rem;
+            font-weight: bold;
+            // background-color: #393939;
+        }
 
-    .glaasje {
-        opacity: 80%;
-        position: relative;
-        background-color: #0F0F0F;
-
-        // >img {
-        //     opacity: 100%;
-        // }
-
+        .glaasje {
+            width: 100%;
+            height: 100%;
+            opacity: 50%;
+            position: absolute;
+            background-color: #0F0F0F;
+        }
     }
 }
