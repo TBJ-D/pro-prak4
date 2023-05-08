@@ -22,16 +22,14 @@
             <div id="pagecontainer" class="page-container">
                 <?php
                     require('./config.php');
+                    require('./lib/Database.php');
 
-                    $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-            
-                    $pdo = require('util/getPdo.php');
-                    $sql = "USE proprak4";
-                    $statement = $pdo->prepare($sql);
-            
-                    $stmt = $pdo->prepare("SELECT content FROM pagecontent WHERE pagename=?");
-                    $stmt->execute([$_GET["page"]]);
-                    $row = $stmt->fetch();
+                    $db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+
+                    $db->query("SELECT content FROM pagecontent WHERE pagename=?");
+                    $db->execute([$_GET["page"]]);
+                    $row = $db->fetch();
+
                     echo $row[0];
                 ?>
             </div>

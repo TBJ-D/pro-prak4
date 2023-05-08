@@ -4,22 +4,22 @@ $email =  htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST["password"]);
 require ('./util/encryption.php');
 require('./config.php');
+require('./lib/Database.php');
 
-$dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
+$db = new Database($dbHost,$dbName,$dbUser,$dbPass);
 
-$pdo = require('util/getPdo.php');
-$sql = "USE proprak4";
-$statement = $pdo->prepare($sql);
+$db->query("SELECT * FROM users WHERE password=? AND email=? LIMIT 1");
+$db->execute([$password,$email]);
+$row = $db->fetch();
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE password=? AND email=? LIMIT 1"); 
-$stmt->execute([$password,$email]); 
-$row = $stmt->fetch();
-
+echo var_dump($row);
 if ($row == false) {
     echo "no user";
 }else {
-    setcookie('user',Decrypt($row['userId']));
+    setcookie('user',Encrypt($row['userId']));
+    echo "$email";
     setcookie('email', $email);
+    echo $_COOKIE['email'];
 }
 
 // Stuur gebruiker terug naar oorspronkelijke pagina

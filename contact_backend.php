@@ -8,23 +8,23 @@ $nieuwsbrief = $_POST['inschrijven'];
 // Opzetten PDO connectie.
 require('./config.php');
 
-$dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-$pdo = require('util/getPdo.php');
-$sql = "USE proprak4";
-$statement = $pdo->prepare($sql);
+require('./lib/Database.php');
+
+$db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+
 
 // Functie om te checken of het ingevoerde email al geabonneerd is.
-function alreadySubscribed($email, $pdo) {
-    $stmt = $pdo->prepare("SELECT * FROM abonnees WHERE email =? LIMIT 1");
-    $stmt->execute([$email]);
-    $row = $stmt->fetch();
+function alreadySubscribed($email, $db) {
+    $db->query("SELECT * FROM abonnees WHERE email =? LIMIT 1");
+    $db->execute([$email]);
+    $row = $db->fetch();
     return $row != false;
 }
 // Functie voor het opslaan van de email voor de nieuwsbrief
-function voegAbonnee($email, $pdo){
-    if (alreadySubscribed($email,$pdo)) return; 
-    $stmt = $pdo->prepare("INSERT INTO abonnees VALUES (?)");
-    $stmt->execute([$email]);
+function voegAbonnee($email, $db){
+    if (alreadySubscribed($email,$db)) return; 
+    $db->query("INSERT INTO abonnees VALUES (?)");
+    $db->execute([$email]);
     $msg = "Dankuwel voor het inschrijven voor onze nieuwsbrief!";
 
     echo "Mailing to ". $email;
@@ -32,18 +32,18 @@ function voegAbonnee($email, $pdo){
 }
 
 // Functie om het bericht van de gebruiker op te slaan
-function saveBericht($email, $onderwerp, $inhoud, $pdo) {
-    $stmt = $pdo->prepare("INSERT INTO emails VALUES (?, ?, ?)");
-    $stmt->execute([$email, $onderwerp, $inhoud]);
+function saveBericht($email, $onderwerp, $inhoud, $db) {
+    $db->query("INSERT INTO emails VALUES (?, ?, ?)");
+    $db->execute([$email, $onderwerp, $inhoud]);
 }
 
 // Check of de gebruiker in wilt schrijven voor de nieuwsbrief
 if ($nieuwsbrief) {
-    voegAbonnee($email,$pdo);
+    voegAbonnee($email,$db);
 }
 
 // Sla het doorgegeven bericht op.
-saveBericht($email, $onderwerp, $inhoud, $pdo);
+saveBericht($email, $onderwerp, $inhoud, $db);
 
 // Stuur gebruiker terug naar oorspronkelijke pagina
 echo "<script> location.href='contact.php'; </script>";
