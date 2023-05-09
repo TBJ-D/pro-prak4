@@ -14,7 +14,7 @@
     $db->query("SELECT content FROM pagecontent WHERE pagename=?");
 
     $db->execute([basename($_SERVER['PHP_SELF'])]);
-    $row = $stmt->fetch();
+    $row = $db->fetch();
     echo $row[0];
     ?>
 
