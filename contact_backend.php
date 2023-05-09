@@ -51,8 +51,8 @@ if ($nieuwsbrief) {
 saveBericht($email, $onderwerp, $inhoud, $db);
 
 // Stuur gebruiker terug naar oorspronkelijke pagina
-// echo "<script> location.href='contact.php'; </script>";
-// exit;
+echo "<script> location.href='contact.php'; </script>";
+exit;
 
 
 
