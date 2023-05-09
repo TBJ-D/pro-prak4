@@ -7,10 +7,8 @@ $userId = $email . $password;
 
 require ('./util/encryption.php');
 require('./config.php');
-require('./lib/Database.php');
-$db = new Database($dbHost,$dbName,$dbUser,$dbPass);
-
-
+require('./lib/DatabaseModel.php');
+$db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
 // Pak gebruiker uit database
 $db->query("SELECT * FROM users WHERE email=? LIMIT 1");
@@ -21,13 +19,12 @@ $row = $db->getSingleRow();
 if ($row == false) {
 
     $db->query( "INSERT INTO users (userId, password, email, isadmin) VALUES (:userId, :password, :email, false)");
-    // $db->bindValue(':userId', $userId , PDO::PARAM_STR);
-    // $db->bindValue(':password', $password, PDO::PARAM_STR);
-    // $db->bindValue(':email', $email , PDO::PARAM_STR);
+
     $x = ["password" => $password, "userId" => $userId  ,"email" => $email];
     $db->bindValues($x);
     $result = $db->execute();
     $encrypted = Encrypt($userId);
+
     setcookie('user', $encrypted);
     setcookie('email', $email);
 }

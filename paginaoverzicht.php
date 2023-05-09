@@ -1,7 +1,7 @@
 
 <head>
-<script src="./js/paginaoverzicht.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="./js/paginaoverzicht.js"></script>
 </head>
 <body>
     <?php 
@@ -22,9 +22,9 @@
             <div id="pagecontainer" class="page-container">
                 <?php
                     require('./config.php');
-                    require('./lib/Database.php');
+                    require('./lib/DatabaseModel.php');
 
-                    $db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+                    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
                     $db->query("SELECT content FROM pagecontent WHERE pagename=?");
                     $db->execute([$_GET["page"]]);

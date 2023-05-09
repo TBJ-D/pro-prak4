@@ -36,6 +36,7 @@ window.onload = () => {
     const urlParams = new URLSearchParams(queryString);
     const page = urlParams.get('page');
     $('#savechanges').click(function () {
+        console.log("clicked")
         let html = document.getElementById('pagecontainer').innerHTML;
         console.log(html);
         $.ajax({

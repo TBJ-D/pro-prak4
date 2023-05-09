@@ -4,9 +4,9 @@ $email =  htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST["password"]);
 require ('./util/encryption.php');
 require('./config.php');
-require('./lib/Database.php');
+require('./lib/DatabaseModel.php');
 
-$db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+$db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
 $db->query("SELECT * FROM users WHERE password=? AND email=? LIMIT 1");
 $db->execute([$password,$email]);

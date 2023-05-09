@@ -1,6 +1,6 @@
 <?php
 
-class Database
+class DatabaseModel
 {
     private $dbHandler;
     private $statement;

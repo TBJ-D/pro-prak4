@@ -8,9 +8,9 @@ $nieuwsbrief = $_POST['inschrijven'];
 // Opzetten PDO connectie.
 require('./config.php');
 
-require('./lib/Database.php');
+require('./lib/DatabaseModel.php');
 
-$db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+$db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
 
 // Functie om te checken of het ingevoerde email al geabonneerd is.
@@ -22,13 +22,18 @@ function alreadySubscribed($email, $db) {
 }
 // Functie voor het opslaan van de email voor de nieuwsbrief
 function voegAbonnee($email, $db){
+    echo "subscribing -";
     if (alreadySubscribed($email,$db)) return; 
+    echo "subscribed -";
+
     $db->query("INSERT INTO abonnees VALUES (?)");
     $db->execute([$email]);
     $msg = "Dankuwel voor het inschrijven voor onze nieuwsbrief!";
 
     echo "Mailing to ". $email;
-    mail($email,"Dankuwel voor het inschrijven.",$msg);
+    ini_set("SMTP","smtp.tipimail.com");
+    $mail = mail($email,"Dankuwel voor het inschrijven.",$msg);
+    echo $mail;
 }
 
 // Functie om het bericht van de gebruiker op te slaan
@@ -46,8 +51,8 @@ if ($nieuwsbrief) {
 saveBericht($email, $onderwerp, $inhoud, $db);
 
 // Stuur gebruiker terug naar oorspronkelijke pagina
-echo "<script> location.href='contact.php'; </script>";
-exit;
+// echo "<script> location.href='contact.php'; </script>";
+// exit;
 
 
 

@@ -15,9 +15,9 @@
                     function getBerichten() {
 
                         require('./config.php');
-                        require('./lib/Database.php');
+                        require('./lib/DatabaseModel.php');
 
-                        $db = new Database($dbHost,$dbName,$dbUser,$dbPass);
+                        $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
                         $email = $_COOKIE['email'];
                         
                         $db->query("SELECT * FROM emails WHERE email=?");
