@@ -5,7 +5,7 @@ $onderwerp = htmlspecialchars($_POST["onderwerp"]);
 $inhoud = $_POST['inhoud'];
 $nieuwsbrief = $_POST['inschrijven'];
 
-// Opzetten PDO connectie.
+// Opzetten DB connectie.
 require('./config.php');
 
 require('./lib/DatabaseModel.php');
@@ -20,12 +20,11 @@ function alreadySubscribed($email, $db) {
     $row = $db->fetch();
     return $row != false;
 }
+
 // Functie voor het opslaan van de email voor de nieuwsbrief
 function voegAbonnee($email, $db){
-    echo "subscribing -";
     if (alreadySubscribed($email,$db)) return; 
-    echo "subscribed -";
-
+    
     $db->query("INSERT INTO abonnees VALUES (?)");
     $db->execute([$email]);
     $msg = "Dankuwel voor het inschrijven voor onze nieuwsbrief!";
