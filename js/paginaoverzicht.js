@@ -25,9 +25,12 @@ window.onload = () => {
 
     textElements.forEach(el => {
         el.addEventListener('click', () => {
-            var input = prompt('Voer nieuwe tekst in');
+            let input = prompt('Voer nieuwe tekst in');
             el.textContent = input;
-
+            let colorInput = prompt('Voer nieuwe tekstkleur in (null om huidige te behouden)');
+            if (colorInput != "null") el.style.color = colorInput;
+            let backgroundInput = prompt('Voer nieuwe achtergrondkleur in (null om huidige te behouden)');
+            if (backgroundInput != "null") el.style.backgroundColor = backgroundInput;
         })
     })
     let mainElements = document.querySelectorAll("main");
