@@ -8,12 +8,10 @@
     require('./config.php');
     require('./lib/DatabaseModel.php');
 
-    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);    
-    $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-
-
+    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
+        
+    // Haal HTML content op vanuit database en display het
     $db->query("SELECT content FROM pagecontent WHERE pagename=?");
-
     $db->execute([basename($_SERVER['PHP_SELF'])]);
     $row = $db->fetch();
     echo $row[0];
