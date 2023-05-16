@@ -12,13 +12,10 @@
 
     // Opzetten PDO
     require('./config.php');
+    require('./lib/DatabaseModel.php');
 
-    $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-    $pdo = require('util/getPdo.php');
-    $sql = "USE proprak4";
-    $statement = $pdo->prepare($sql);
-    echo "UPDATE $table SET $row = $data WHERE $identifier = $key";
-    $stmt = $pdo->prepare("UPDATE $table SET $row = '$data' WHERE $identifier = '$key' ");
-    $stmt->execute();
+    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
+    $db->query("UPDATE $table SET $row = '$data' WHERE $identifier = '$key' ");
+    $db->execute();
 
 ?>

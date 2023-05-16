@@ -8,7 +8,6 @@
 
     #specs-word {
         position: absolute;
-        top: 50%;
         font-size: 2rem;
         font-weight: bold;
     }
@@ -21,9 +20,10 @@
     gap: 4rem;
 
     .specs-text {
-        [alt="iphone14"]{
+        [alt="iphone14"] {
             object-fit: cover;
         }
+
         margin: 10rem 0 10rem 0;
         position: relative;
         gap: 5rem;
