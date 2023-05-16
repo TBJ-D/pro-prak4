@@ -1,37 +1,34 @@
+
 <body>
     <?php
-    include_once("header.php");
-    ?>
+        include_once("header.php");
+    ?> 
     <main id="info">
-        <!-- <div class="top">
-            <img src="media/home_banner.png" alt="iphone14">
-        </div> -->
-        <div class="banner">
-            <img src="/media/image 22.png" alt="iphone-img">
-            <div class="glaasje"></div>
-            <h1>iPhone 14 pro</h1>
+    <div class="banner">
 
-        </div>
-        <div class="s1">
-            <div class="info-img">
-                <img src="" alt="">
-                <h2>Informatievak</h2>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi praesentium eius voluptatum tenetur nam? Nam, id. Dolore quia quis sunt laudantium, beatae saepe deleniti, deserunt dolor aperiam nulla voluptatibus omnis!
-                    Minus, magni quod vel eos praesentium magnam commodi enim adipisci itaque dolorem, placeat, beatae explicabo voluptatum alias sit dignissimos aperiam ullam! Obcaecati reiciendis at libero voluptate. Temporibus optio quam impedit?
-                    Sit, quo nisi perferendis minima nihil iusto vitae nemo architecto voluptatum ducimus unde labore similique neque illum nostrum. Consectetur inventore voluptas quasi quisquam, unde saepe provident dolores id vel dolor?
-                    Necessitatibus nihil deserunt fugit laborum vero laboriosam suscipit voluptates neque provident dolorum sint ipsum repellendus consequuntur debitis blanditiis iusto incidunt voluptas maiores et, nostrum explicabo voluptate itaque pariatur reprehenderit? Voluptas.
-                </p>
-                <div class="btns">
-                    <button class="specs-page">
-                        <a href="#">Specs</a>
-                    </button>
-                    <button class="promotie-page">
-                        <a href="#">Promotie</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
+<img src="media\info_banner.png" alt="iphone-img">
 
+<div class="glaasje"></div>
+
+<h1>iPhone 14 pro</h1>
+
+
+
+</div>
+  <div class="bottom">
+    <img src="media/iPhone-14-Mock.png" alt="first">
+    <div class="text-box">
+        <h2>Information</h2>
+        <p>De iPhone 14 is de nieuwste iPhone en heeft dus de beste kwaliteit, hij is groter dan vorige iPhone. Het heeft ook een hoge display en de iPhone 14 kan ook goed tegen een stootje en is niet binnen 1 val kapot. De iPhone 14 gaat 9 uur mee zonder dat die leeg is. De IPhone 14 heeft een mooi design en is de beste IPhone tot nu toe.  </p>
+  </div>
+
+  </div>
+  <div class="bottom-2">
+    <img src="media/iphone14pro2-removebg-preview.png" alt="second">
+    <div class="text-box-2">
+        <h2>Information</h2>
+        <p>De iPhone 14 heeft eigenlijk alles beter dan de alternatieve telefoons, betere kwaliteit, beter model. De iPhone 14 is ook waterproof, niet elke telefoon heeft dat. Het camera standpunt is ook verbeterd. De batterij gaat ook langer mee dan de vorige iPhones.</p>
+  </div>
+  </div>
+  </main>
 </body>
