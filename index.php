@@ -3,6 +3,7 @@
 
 <body>
     <?php
+    // Haal HTML content op van database
     include_once("header.php");
     require('./config.php');
     require('./lib/DatabaseModel.php');
