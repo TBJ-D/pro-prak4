@@ -1,7 +1,8 @@
 main#home {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+
     div {
         &.top {
             width: 100%;
@@ -9,12 +10,14 @@ main#home {
             background-color: #393939;
             display: flex;
             justify-content: center;
+
             img {
                 width: 70%;
                 height: 100%;
                 object-fit: cover;
             }
         }
+
         &.bottom {
             height: 50%;
             width: 100%;
@@ -25,21 +28,25 @@ main#home {
             color: #ffffff;
             justify-content: space-evenly;
             font-family: 'Inter', sans-serif;
-           
+
             h1 {
                 font-size: 2rem;
                 font-weight: bold;
+
                 @media (max-width: 650px) {
                     font-size: 1.5rem;
                 }
             }
+
             span {
                 font-size: 1rem;
                 text-align: center;
+
                 @media (max-width: 650px) {
                     font-size: .8rem;
                 }
             }
+
             div#buttons {
                 display: flex;
                 width: 100%;
