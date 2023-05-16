@@ -8,27 +8,24 @@ $userId = $email . $password;
 require ('./util/encryption.php');
 // Opzetten PDO
 require('./config.php');
-
-$dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-$pdo = require('util/getPdo.php');
-$sql = "USE proprak4";
-$statement = $pdo->prepare($sql);
+require('./lib/DatabaseModel.php');
+$db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
 // Pak gebruiker uit database
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email=? LIMIT 1"); 
-$stmt->execute([$email]); 
-$row = $stmt->fetch();
+$db->query("SELECT * FROM users WHERE email=? LIMIT 1");
+$db->execute([$email]);
+$row = $db->fetch();
 
 // Als gebruiker niet al bestaat, registreer de gebruiker en zet de cookie om de gebruiker te herkennen.
 if ($row == false) {
-    $sql = "INSERT INTO users (userId, password, email, isadmin) VALUES (:userId, :password, :email, false)";
-    $statement = $pdo->prepare($sql);
-    $statement->bindValue(':userId', $userId , PDO::PARAM_STR);
-    $statement->bindValue(':password', $password, PDO::PARAM_STR);
-    $statement->bindValue(':email', $email , PDO::PARAM_STR);
-    $result = $statement->execute();
 
+    $db->query( "INSERT INTO users (userId, password, email, isadmin) VALUES (:userId, :password, :email, false)");
+
+    $x = ["password" => $password, "userId" => $userId  ,"email" => $email];
+    $db->bindValues($x);
+    $result = $db->execute();
     $encrypted = Encrypt($userId);
+
     setcookie('user', $encrypted);
 }
 

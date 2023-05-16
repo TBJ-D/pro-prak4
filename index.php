@@ -3,19 +3,18 @@
 
 <body>
     <?php
-        include_once("header.php");
-        require('./config.php');
+    // Haal HTML content op van database
+    include_once("header.php");
+    require('./config.php');
+    require('./lib/DatabaseModel.php');
 
-        $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
-
-        $pdo = require('util/getPdo.php');
-        $sql = "USE proprak4";
-        $statement = $pdo->prepare($sql);
-
-        $stmt = $pdo->prepare("SELECT content FROM pagecontent WHERE pagename=?");
-        $stmt->execute([basename($_SERVER['PHP_SELF'])]);
-        $row = $stmt->fetch();
-        echo $row[0];
-   ?>
+    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
+        
+    // Haal HTML content op vanuit database en display het
+    $db->query("SELECT content FROM pagecontent WHERE pagename=?");
+    $db->execute([basename($_SERVER['PHP_SELF'])]);
+    $row = $db->fetch();
+    echo $row[0];
+    ?>
 
 </body>

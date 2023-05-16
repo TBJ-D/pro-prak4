@@ -15,16 +15,14 @@
                     function getBerichten() {
 
                         require('./config.php');
-                        $dsn = "mysql:host=$dbHost;dbname=$dbName;charset=UTF8";
+                        require('./lib/DatabaseModel.php');
+
+                        $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
                         $email = $_COOKIE['email'];
-                        $pdo = require('util/getPdo.php');
-
-                        $sql = "USE proprak4";
-                        $statement = $pdo->prepare($sql);
-
-                        $stmt = $pdo->prepare("SELECT * FROM emails WHERE email=?"); 
-                        $stmt->execute([$email]); 
-                        $res = $stmt->fetchAll();
+                        
+                        $db->query("SELECT * FROM emails WHERE email=?");
+                        $db->execute([$email]); 
+                        $res = $db->fetchAll();
                         return $res;
                     }
                     // Als gebruiker niet is ingelogd, dus !isset($_COOKIE["user"]); Display login pagina. Anders display berichten dashboard.
