@@ -14,7 +14,6 @@
                 <ul>
                     <li><a href="?page=index.php">Home</a></li>
                     <li><a href="?page=info.php">Informatie</a></li>
-                    <li><a href="?page=contact.php">Contact</a></li>
                     <li><a href="?page=specs.php">Specs</a></li>
                 </ul>
                 <button id="savechanges" type="button" name="savechanges">Save changes</button>
