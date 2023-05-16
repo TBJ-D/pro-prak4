@@ -15,7 +15,7 @@ $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 $db->query("SELECT * FROM users WHERE email=? LIMIT 1");
 $db->execute([$email]);
 $row = $db->fetch();
-
+$code = 0;
 // Als gebruiker niet al bestaat, registreer de gebruiker en zet de cookie om de gebruiker te herkennen.
 if ($row == false) {
 
@@ -27,9 +27,12 @@ if ($row == false) {
     $encrypted = Encrypt($userId);
 
     setcookie('user', $encrypted);
+    setcookie('email', $email);
+}else {
+    $code = 1;
 }
 
 // Stuur gebruiker terug naar oorspronkelijke pagina
-echo "<script> location.href='login.php'; </script>";
+echo "<script> location.href='login.php?code=$code'; </script>";
 exit;
 ?>
