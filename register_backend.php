@@ -3,6 +3,22 @@
 // Haal form inputs op
 $email =  htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST['password'] );
+$confirmpassword = htmlspecialchars($_POST['confirmpassword']);
+function checkEmail($email) {
+    $find1 = strpos($email, '@');
+    $find2 = strpos($email, '.');
+    return ($find1 !== false && $find2 !== false && $find2 > $find1);
+}
+
+if (!checkEmail($email)) {
+    echo "<script> location.href='register.php?code=3'; </script>";
+    return;
+
+}
+if ($confirmpassword != $password) {
+    echo "<script> location.href='register.php?code=2'; </script>";
+    return;
+}
 $userId = $email . $password;
 
 require ('./util/encryption.php');

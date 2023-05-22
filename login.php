@@ -11,9 +11,21 @@
                     
                     require('./util/encryption.php');
                    
-                    // if ($_GET['code']) {
-                    //     echo $_GET['code'];
-                    // }
+                    if (isset($_GET['code'])) {
+                        $message;
+                        switch($_GET['code']){
+                            case 0:
+                                $message = "Registered succesfully";   
+                            break;
+                            case 1:
+                                $message = "Account already exists";
+                            break;
+                            case 3:
+                                $message = "Invalid email";
+                            break;
+                        }
+                        echo "<script> alert('$message'); </script>";
+                    }
                     function getBerichten() {
 
                         require('./config.php');
