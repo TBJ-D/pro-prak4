@@ -11,7 +11,9 @@
                     
                     require('./util/encryption.php');
                    
-                    
+                    // if ($_GET['code']) {
+                    //     echo $_GET['code'];
+                    // }
                     function getBerichten() {
 
                         require('./config.php');
