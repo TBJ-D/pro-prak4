@@ -13,6 +13,7 @@
             <li><a href="./info.php">Informatie</a></li>
             <li><a href="./contact.php">Contact</a></li>
             <li><a href="./specs.php">Specs</a></li>
+            <li><a href="./promotie.php">Promotie</a></li>
 
         </ul>
     </nav>
