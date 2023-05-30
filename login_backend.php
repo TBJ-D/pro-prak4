@@ -6,6 +6,17 @@ require ('./util/encryption.php');
 require('./config.php');
 require('./lib/DatabaseModel.php');
 
+function checkEmail($email) {
+    $find1 = strpos($email, '@');
+    $find2 = strpos($email, '.');
+    return ($find1 !== false && $find2 !== false && $find2 > $find1);
+}
+
+if (!checkEmail($email)) {
+    echo "<script> location.href='register.php?code=3'; </script>";
+    return;
+}
+
 $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
 
 $db->query("SELECT * FROM users WHERE password=? AND email=? LIMIT 1");

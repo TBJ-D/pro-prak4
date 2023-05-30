@@ -71,35 +71,5 @@ main#info {
                 font-size: large;
             }
         }
-
-        &.bottom-2 {
-            box-sizing: border-box;
-            font-family: "Inter", sans-serif;
-            justify-content: start;
-            margin-left: 1rem;
-            align-items: center;
-            margin-bottom: 3em;
-            margin-top: 2em;
-            margin-left: 1%;
-
-            img {
-                max-width: 450px;
-                max-height: 50vh;
-                float: left;
-                margin-right: 1%;
-            }
-        }
-
-        &.text-box-2 {
-            h1 {
-                font-size: xx-large;
-            }
-
-            p {
-                margin-top: 1rem;
-                font-size: large;
-                margin-right: 5%;
-            }
-        }
     }
 }

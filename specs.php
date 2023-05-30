@@ -1,26 +1,20 @@
-<?php
-include_once("header.php");
-?>
 
-<head>
-    <link rel="stylesheet" href="./css/specs.css">
-</head>
+
 
 <body>
-    <main id="specs">
-        <div class="specs-banner">
-            <img src="media/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-Dynamic-Island-demo-3up.jpg.large_2x" alt="iphone14">
-            <p id="specs-word">specs</p>
-        </div>
-        <div class="specs">
-            <div class="specs-text">
-                <img src="./media/450_1000" alt="iphone14">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu condimentum felis, ac tempus urna. Mauris tincidunt condimentum arcu, sit amet rutrum ex semper quis. Nunc non erat ut ligula pulvinar cursus congue id tortor. Sed aliquam aliquam ligula, commodo porttitor leo molestie a. In lobortis congue dui, vitae luctus lorem aliquet id. Aliquam accumsan elementum felis ornare porttitor. Donec eget euismod ipsum.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tincidunt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu condimentum felis, ac tempus urna. Mauris tincidunt condimentum arcu, sit amet rutrum ex semper quis. Nunc non erat ut ligula pulvinar cursus congue id tortor. Sed aliquam aliquam ligula, commodo porttitor leo molestie a. In lobortis congue dui, vitae luctus lorem aliquet id. Aliquam accumsan elementum felis ornare porttitor. Donec eget euismod ipsum.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tincidunt </p>
-            </div>
-        </div>
-    </main>
-</body>
+    <?php
+    // Haal HTML content op van database
+    include_once("header.php");
+    require('./config.php');
+    require('./lib/DatabaseModel.php');
 
-</html>
+    $db = new DatabaseModel($dbHost,$dbName,$dbUser,$dbPass);
+        
+    // Haal HTML content op vanuit database en display het
+    $db->query("SELECT content FROM pagecontent WHERE pagename=?");
+    $db->execute([basename($_SERVER['PHP_SELF'])]);
+    $row = $db->fetch();
+    echo $row[0];
+    ?>
+
+</body>

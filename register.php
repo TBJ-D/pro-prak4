@@ -3,6 +3,18 @@
 <body>
     <?php 
         include_once("header.php");
+        if (isset($_GET['code'])) {
+            $message;
+            switch($_GET['code']){
+                case 2:
+                    $message = "Passwords do not match.";   
+                break;
+                case 3:
+                    $message = "Invalid email";
+                break;
+            }
+            echo "<script> alert('$message'); </script>";
+        }
     ?> 
     <main id="register">
         <div class="form-container form-background">
