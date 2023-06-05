@@ -5,23 +5,24 @@
 <body>
     <?php include_once("header.php"); ?>
 
-   
+
 
     <div class="promo-content">
         <div class="banner-picture">
             <img src="media/promo_banner.png" alt="phone">
-        
 
 
-        <h1>Introducing the Iphone 14</h1>
-    </div>
+
+
+        </div>
+
+        <h1 class="intro">Introducing the Iphone 14</h1>
 
         <div class="promo-tekst">
 
-
             <img class="round" src="/media/iphone_hands_promo.png" alt="">
-
-            <p>Introducing the iPhone 14 - the ultimate smartphone experience that sets the bar for the future of mobile technology.
+                
+            <p> ultimate smartphone experience that sets the bar for the future of mobile technology.
                 With groundbreaking advancements in design, performance, and user experience,
                 the iPhone 14 is truly the best iPhone yet.
             </p>
