@@ -7,6 +7,8 @@ body {
     flex-direction: column;
     height: 130vh;
 
+
+
     >.banner-picture {
         padding-top: 8rem;
         width: 100%;
@@ -22,25 +24,37 @@ body {
             float: right;
         }
 
-        h1 {
-            background-color: #393939;
+       
+    }
+
+    .intro {
+        margin-top: 2rem;
+        font-family: 'Inter';
+        color: white;
+    
+
+            font-weight: 600;
+            text-align: center;
+            font-size: 50;
+    
+        
+    }
+
+
+    .promo-tekst {
+
+    
+        font-family: 'Inter';
+        margin-right: 5rem;
+
+        .title {
             width: 70%;
-            margin-top: 0;
             position: absolute;
             color: white;
             font-size: xx-large;
             font-weight: bolder;
             text-align: center;
         }
-    }
-
-
-
-    .promo-tekst {
-        font-family: 'Inter';
-        margin: 5rem;
-
-
         .round {
             width: 35rem;
             height: 35rem;
@@ -50,15 +64,16 @@ body {
 
             shape-outside: circle();
 
-            color: white;
         }
 
-        p {
-            margin-top: 2rem;
-            text-align: justify;
-            font-size: 18px;
-
-        }
 
     }
+
+    
+  
+}
+
+p {
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
 }
